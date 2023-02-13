@@ -1,0 +1,16 @@
+name: simple_get
+variables:
+  paranoia_level: 3
+request: |
+  GET /sample/sample2?id=12345 HTTP/1.1
+  Host: localhost
+  Accept: */*
+  User-Agent: curl/7.47.0
+  Accept-Encoding: gzip, deflate
+  Accept-Language: en-US,en;q=0.5
+response: |
+  HTTP/1.1 200 OK
+  Content-Length: 2
+  Content-Type: text/plain
+
+  OK

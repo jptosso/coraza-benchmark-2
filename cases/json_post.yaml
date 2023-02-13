@@ -1,0 +1,41 @@
+name: simple_post_json
+variables:
+  paranoia_level: 3
+request: |
+  GET /sample/sample2?id=12345 HTTP/1.1
+  Host: localhost
+  Accept: */*
+  User-Agent: curl/7.47.0
+  Accept-Encoding: gzip, deflate
+  Accept-Language: en-US,en;q=0.5
+  Content-Type: application/json
+  Content-Length: 582
+
+  {
+      "glossary": {
+          "title": "example glossary",
+      "GlossDiv": {
+              "title": "S",
+        "GlossList": {
+                  "GlossEntry": {
+                      "ID": "SGML",
+            "SortAs": "SGML",
+            "GlossTerm": "Standard Generalized Markup Language",
+            "Acronym": "SGML",
+            "Abbrev": "ISO 8879:1986",
+            "GlossDef": {
+                          "para": "A meta-markup language, used to create markup languages such as DocBook.",
+              "GlossSeeAlso": ["GML", "XML"]
+                      },
+            "GlossSee": "markup"
+                  }
+              }
+          }
+      }
+  }
+response: |
+  HTTP/1.1 200 OK
+  Content-Length: 2
+  Content-Type: text/plain
+
+  OK
